@@ -1,0 +1,52 @@
+{
+  "name": "lmnp-saas",
+  "version": "1.0.0",
+  "description": "Gestion fiscale intelligente pour les Locations Meublées Non Professionnelles",
+  "main": "backend/src/main.py",
+  "scripts": {
+    "install:backend": "cd backend && pip install -r requirements.txt",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "dev:backend": "cd backend && python src/main.py",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "build:full": "npm run build:frontend && cp -r frontend/dist/* backend/src/static/",
+    "test:backend": "cd backend && python -m pytest tests/ -v",
+    "test:frontend": "cd frontend && npm run test",
+    "test:all": "npm run test:backend && npm run test:frontend",
+    "lint:backend": "cd backend && flake8 src/",
+    "lint:frontend": "cd frontend && npm run lint",
+    "format:backend": "cd backend && black src/",
+    "format:frontend": "cd frontend && npm run format",
+    "setup": "chmod +x scripts/setup.sh && ./scripts/setup.sh",
+    "clean": "rm -rf backend/venv frontend/node_modules frontend/dist backend/src/static/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/votre-username/lmnp-saas.git"
+  },
+  "keywords": [
+    "lmnp",
+    "fiscalite",
+    "immobilier",
+    "ia",
+    "saas",
+    "location-meublee",
+    "declaration-fiscale",
+    "agents-ia"
+  ],
+  "author": "LMNP SAAS Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/votre-username/lmnp-saas/issues"
+  },
+  "homepage": "https://github.com/votre-username/lmnp-saas#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.11.0"
+  },
+  "workspaces": [
+    "frontend"
+  ]
+}
+
